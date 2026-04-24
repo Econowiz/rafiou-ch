@@ -1,43 +1,30 @@
-# Astro Starter Kit: Minimal
+# rafiou.ch
 
-```sh
-pnpm create astro@latest -- --template minimal
+Personal portfolio site. Built with Astro 6, Tailwind CSS v4, and MDX.
+
+## Stack
+
+- [Astro 6](https://astro.build) — static output, file-based routing
+- [Tailwind CSS v4](https://tailwindcss.com) — design tokens in `src/styles/global.css`
+- [MDX](https://mdxjs.com) — case studies and essays as content files
+- [Vercel](https://vercel.com) — hosting and previews
+
+## Commands
+
+```bash
+pnpm dev        # local dev server at localhost:4321
+pnpm build      # production build
+pnpm preview    # preview build locally
+pnpm astro check # type check
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+  components/ui/     # shared components
+  content/           # MDX case studies and essays
+  layouts/           # page layouts
+  pages/             # routes
+  styles/            # global CSS + design tokens
+```
