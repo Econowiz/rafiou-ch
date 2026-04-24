@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/ui/PageHeader.astro";
+import PinnedProjectCard from "../components/ui/PinnedProjectCard.astro";
+import FilteredGrid from "../components/ui/FilteredGrid";
+import type { Project } from "../components/ui/FilteredGrid";
+
+const projects: Project[] = [
+  {
+    title: "Recurr — subscription management",
+    description: "Event-sourced reconciler built around email and screenshot analysis.",
+    result: "Event-sourced reconciler · 4-tier LLM cascade · private alpha.",
+    category: "Systems",
+    status: "Alpha",
+    stack: ["typescript", "turbo-monorepo", "sqlite"],
+  },
+  {
+    title: "Intelligent financial close",
+    description: "Month-end close modelled on a 19-account synthetic GL with Z-score anomaly detection.",
+    result: "12-day close cut to 4 · Z-score anomaly detection across 17 tasks.",
+    category: "Bridge",
+    status: "Public",
+    stack: ["python", "sqlite", "scikit-learn", "pandas"],
+    href: "/engineering/intelligent-financial-close",
+  },
+  {
+    title: "Claude Code automation layer",
+    description: "Personally configured agent team inside GENNA with hard-gate stop hooks.",
+    result: "17 sub-agents · 47 commands · 7 skills · 8 parallel worktrees.",
+    category: "Systems",
+    status: "Private",
+    stack: ["typescript", "claude", "bash"],
+  },
+  {
+    title: "Real estate market performance",
+    description: "D3 interactive visualisation of state-level variance across US real estate markets.",
+    result: "D3 interactive · state-level variance analysis.",
+    category: "Analytics",
+    status: "Planned",
+    stack: ["d3", "python", "pandas"],
+  },
+];
+---
+
+<Base title="Engineering" activeNav="engineering">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-12">
+
+    <PageHeader
+      title="Engineering"
+      counter="7 projects"
+      subtitle="Self-hosted agent runtimes, finance-ops tooling, and applied ML where it earns its keep."
+    />
+
+    <div class="mb-6">
+      <PinnedProjectCard
+        title="GENNA — agent runtime with trust boundaries"
+        description="A self-hosted, CaMeL-inspired runtime. The planner never sees untrusted data; capability tokens gate every tool call."
+        result="Six layers · 74 capability directives · 4 trust tiers."
+        category="Systems"
+        status="Private"
+        stack={["typescript", "turbo-monorepo", "docker-compose", "sops/age", "claude"]}
+      />
+    </div>
+
+    <FilteredGrid
+      client:load
+      filters={["Systems", "Analytics", "Bridge"]}
+      projects={projects}
+    />
+
+  </div>
+</Base>
