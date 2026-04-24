@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Franck Rafiou-Doué">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-16">
+
+    <!-- Identity pills -->
+    <div class="flex flex-wrap gap-2 mb-10">
+      {["Financial Controller", "Software Engineer", "Data Analyst"].map((label) => (
+        <span class="rounded-full border border-[var(--color-border-tertiary)] px-3 py-1 text-[11.5px] text-[var(--color-text-secondary)] font-mono tracking-wide">
+          {label}
+        </span>
+      ))}
+    </div>
+
+    <!-- Hero -->
+    <h1 class="font-serif text-[28px] font-[500] leading-snug mb-5 max-w-xl text-[var(--color-text-primary)]">
+      Running the numbers, and writing the{" "}
+      <em class="text-[var(--color-sage)] not-italic">tools underneath.</em>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-[14px] text-[var(--color-text-secondary)] leading-relaxed max-w-[440px] mb-12">
+      Three years of pharma controlling in Switzerland, a finance-lead year abroad, and a pile of side
+      projects that turned into daily drivers.
+    </p>
+
+    <!-- Tiles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+      <a href="/finance" class="group block border border-[var(--color-border-tertiary)] rounded-lg bg-[var(--color-bg-primary)] p-5 hover:-translate-y-0.5 hover:border-[var(--color-border-secondary)] transition-all duration-150">
+        <div class="h-0.5 w-8 bg-[var(--color-sage)] mb-4"></div>
+        <h2 class="font-serif text-[20px] font-[500] mb-2 text-[var(--color-text-primary)]">Finance</h2>
+        <p class="text-[12.5px] text-[var(--color-text-secondary)] leading-relaxed mb-4">
+          Controlling, project accounting, and the analytics underneath.
+        </p>
+        <span class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-tertiary)]">
+          5 projects →
+        </span>
+      </a>
+
+      <a href="/engineering" class="group block border border-[var(--color-border-tertiary)] rounded-lg bg-[var(--color-bg-primary)] p-5 hover:-translate-y-0.5 hover:border-[var(--color-border-secondary)] transition-all duration-150">
+        <div class="h-0.5 w-8 bg-[var(--color-sage)] mb-4"></div>
+        <h2 class="font-serif text-[20px] font-[500] mb-2 text-[var(--color-text-primary)]">Engineering</h2>
+        <p class="text-[12.5px] text-[var(--color-text-secondary)] leading-relaxed mb-4">
+          Systems, agent tooling, and applied AI for real work.
+        </p>
+        <span class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-tertiary)]">
+          6 projects →
+        </span>
+      </a>
+    </div>
+
+    <!-- Writing strip -->
+    <div class="flex items-baseline justify-between border-t border-[var(--color-border-tertiary)] pt-5">
+      <div>
+        <span class="font-serif text-[14px] text-[var(--color-text-primary)]">Writing</span>
+        <span class="text-[12px] text-[var(--color-text-secondary)] ml-2">
+          SSRN paper (April 2026) and essays.
+        </span>
+      </div>
+      <a href="/writing" class="text-[13px] text-[var(--color-sage)] hover:text-[var(--color-sage-dark)] transition-colors font-[500]">
+        writing →
+      </a>
+    </div>
+
+  </div>
+</Base>
