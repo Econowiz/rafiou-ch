@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/ui/PageHeader.astro";
+import PinnedProjectCard from "../components/ui/PinnedProjectCard.astro";
+import FilteredGrid from "../components/ui/FilteredGrid";
+import type { Project } from "../components/ui/FilteredGrid";
+
+const projects: Project[] = [
+  {
+    title: "Intelligent financial close",
+    description: "Month-end close modelled on a 19-account synthetic GL with Z-score anomaly detection.",
+    result: "12-day close cut to 4 · Z-score anomaly detection across 17 tasks.",
+    category: "Bridge",
+    status: "Public",
+    stack: ["python", "sqlite", "scikit-learn", "pandas"],
+    href: "/finance/intelligent-financial-close",
+  },
+  {
+    title: "Rolling 12-month forecast",
+    description: "Macroeconomic inputs from SNB and SECO with a documented assumption log.",
+    result: "SNB + SECO data · assumption log · scenario planning.",
+    category: "Analytics",
+    status: "Planned",
+    stack: ["python", "pandas", "excel"],
+  },
+  {
+    title: "KPI dashboard — Swiss industrial",
+    description: "Mid-cap company, SIX-filed. Revenue, margin, and working capital on one screen.",
+    result: "Operator cockpit · revenue, margin, working capital.",
+    category: "Analytics",
+    status: "Planned",
+    stack: ["power-bi", "python"],
+  },
+  {
+    title: "Cost-centre variance analysis",
+    description: "Notebook walk-through that detects, classifies, and explains cost variances.",
+    result: "Detect, classify, explain — readable by a Head of Finance in three minutes.",
+    category: "Analytics",
+    status: "Planned",
+    stack: ["python", "pandas", "jupyter"],
+  },
+];
+---
+
+<Base title="Finance" activeNav="finance">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-12">
+
+    <PageHeader
+      title="Finance"
+      counter="5 projects"
+      subtitle="Controlling, project accounting, and the analytics layer underneath. Three years at a Swiss pharma CDMO, plus a finance-lead stint outside Switzerland."
+    />
+
+    <div class="mb-6">
+      <PinnedProjectCard
+        title="Close automation at a Swiss pharma CDMO"
+        description="Three years building a Power Automate and Power BI layer on top of an existing OLAP foundation. 360+ manufacturing projects tracked."
+        result="~9 hrs/week eliminated. Close cycle cut by 2 days."
+        category="Operations"
+        stack={["power-bi", "power-automate", "cognos", "excel"]}
+      />
+    </div>
+
+    <FilteredGrid
+      client:load
+      filters={["Operations", "Analytics", "Bridge"]}
+      projects={projects}
+    />
+
+  </div>
+</Base>
