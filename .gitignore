@@ -3,6 +3,7 @@ dist/
 
 # dev tools — local only
 CLAUDE.md
+wiki/
 
 # Vercel
 .vercel/
