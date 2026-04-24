@@ -1,0 +1,42 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  authors: string;
+  abstract: string;
+  topics: string[];
+  href: string;
+}
+const { label, title, authors, abstract, topics, href } = Astro.props;
+---
+
+<div class="border border-[var(--color-border-tertiary)] rounded-lg bg-[var(--color-bg-primary)] p-5">
+  <p class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-secondary)] mb-3">
+    {label}
+  </p>
+  <h3 class="font-serif text-[15px] font-[400] italic text-[var(--color-text-primary)] leading-snug mb-1">
+    {title}
+  </h3>
+  <p class="text-[12px] text-[var(--color-text-secondary)] mb-3">{authors}</p>
+  <p
+    class="text-[12.5px] text-[var(--color-text-secondary)] leading-relaxed pl-3 mb-3"
+    style="border-left: 2px solid var(--color-sage);"
+  >
+    {abstract}
+  </p>
+  <div class="flex flex-wrap gap-1.5 mb-4">
+    {topics.map((t) => (
+      <span class="font-mono text-[10px] uppercase tracking-[0.04em] text-[var(--color-text-tertiary)] bg-[var(--color-bg-tertiary)] rounded px-1.5 py-0.5">
+        {t}
+      </span>
+    ))}
+  </div>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-[13px] text-[var(--color-sage)] hover:text-[var(--color-sage-dark)] transition-colors"
+  >
+    read on SSRN →
+  </a>
+</div>

@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/ui/PageHeader.astro";
+import PaperCard from "../components/ui/PaperCard.astro";
+import EssayRow from "../components/ui/EssayRow.astro";
+
+// TODO: replace with real SSRN details once provided
+const paper = {
+  label: "SSRN working paper · April 2026",
+  title: "Title to be confirmed",
+  authors: "Franck Rafiou-Doué",
+  abstract: "Abstract to be confirmed. See open/questions in the project wiki.",
+  topics: ["finance", "automation"],
+  href: "#",
+};
+
+// TODO: migrate from econowiz.github.io
+const essays: { date: string; title: string; excerpt: string; readTime: string; href: string }[] = [];
+---
+
+<Base title="Writing" activeNav="writing">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-12">
+
+    <PageHeader
+      title="Writing"
+      subtitle="One working paper on SSRN, and a growing set of essays on finance, automation, and the tools underneath."
+    />
+
+    <!-- Papers -->
+    <div class="mb-10">
+      <div class="flex items-baseline justify-between mb-4">
+        <h2 class="font-serif text-[15px] font-[500] text-[var(--color-text-primary)]">Papers</h2>
+        <span class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-tertiary)]">
+          1 published
+        </span>
+      </div>
+      <div class="h-px bg-[var(--color-border-tertiary)] mb-5"></div>
+      <PaperCard {...paper} />
+    </div>
+
+    <!-- Essays -->
+    <div>
+      <div class="flex items-baseline justify-between mb-4">
+        <h2 class="font-serif text-[15px] font-[500] text-[var(--color-text-primary)]">Essays</h2>
+        <span class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-tertiary)]">
+          {essays.length > 0 ? `${essays.length} posts` : "coming soon"}
+        </span>
+      </div>
+      <div class="h-px bg-[var(--color-border-tertiary)]"></div>
+      {essays.length > 0
+        ? essays.map((e) => <EssayRow {...e} />)
+        : (
+          <p class="text-[13px] text-[var(--color-text-tertiary)] py-6">
+            Essays migrating from econowiz.github.io — check back soon.
+          </p>
+        )
+      }
+    </div>
+
+  </div>
+</Base>

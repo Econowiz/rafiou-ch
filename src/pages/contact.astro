@@ -1,0 +1,70 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/ui/PageHeader.astro";
+---
+
+<Base title="Contact" activeNav="contact">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-12">
+
+    <PageHeader
+      title="Contact"
+      subtitle="Email is the fastest way to reach me. I read most things and reply within a day."
+    />
+
+    <!-- Email -->
+    <div class="mb-10">
+      <p class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-secondary)] mb-2">
+        Email
+      </p>
+      <div class="flex items-baseline gap-4">
+        <a
+          href="mailto:franck@aethelstone.com"
+          class="font-serif text-[22px] text-[var(--color-text-primary)] hover:text-[var(--color-sage)] transition-colors"
+        >
+          franck@aethelstone.com
+        </a>
+        <button
+          onclick="navigator.clipboard.writeText('franck@aethelstone.com').then(() => { this.textContent = 'copied'; setTimeout(() => this.textContent = 'copy →', 1500) })"
+          class="font-mono text-[11px] text-[var(--color-text-tertiary)] hover:text-[var(--color-sage)] transition-colors cursor-pointer"
+        >
+          copy →
+        </button>
+      </div>
+    </div>
+
+    <!-- Also at -->
+    <div class="mb-10">
+      <p class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-secondary)] mb-4">
+        Also at
+      </p>
+      <div class="flex flex-col gap-3">
+        {[
+          { platform: "LinkedIn", handle: "linkedin.com/in/rafiou", href: "https://linkedin.com/in/rafiou" },
+          { platform: "GitHub",   handle: "github.com/Econowiz",    href: "https://github.com/Econowiz" },
+        ].map(({ platform, handle, href }) => (
+          <div class="flex items-baseline gap-4">
+            <span class="font-serif text-[14px] text-[var(--color-text-primary)] w-[80px] shrink-0">
+              {platform}
+            </span>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-mono text-[12px] text-[var(--color-text-secondary)] hover:text-[var(--color-sage)] transition-colors"
+            >
+              {handle}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Context -->
+    <div class="border-t border-[var(--color-border-tertiary)] pt-5">
+      <p class="text-[12px] text-[var(--color-text-tertiary)]">
+        Lucerne, CH · UTC+1 · German, French, English
+      </p>
+    </div>
+
+  </div>
+</Base>

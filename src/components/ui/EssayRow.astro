@@ -1,0 +1,26 @@
+---
+interface Props {
+  date: string;
+  title: string;
+  excerpt: string;
+  readTime: string;
+  href: string;
+}
+const { date, title, excerpt, readTime, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group flex items-baseline gap-4 py-4 border-b border-[var(--color-border-tertiary)] hover:bg-[var(--color-bg-primary)] -mx-3 px-3 transition-colors"
+>
+  <span class="font-mono text-[10.5px] text-[var(--color-text-tertiary)] shrink-0 w-[84px]">
+    {date}
+  </span>
+  <div class="flex-1 min-w-0">
+    <p class="font-serif text-[14px] font-[500] text-[var(--color-text-primary)] leading-snug group-hover:text-[var(--color-sage)] transition-colors">
+      {title}
+    </p>
+    <p class="text-[12px] text-[var(--color-text-secondary)] mt-0.5 truncate">{excerpt}</p>
+  </div>
+  <span class="font-mono text-[10.5px] text-[var(--color-text-tertiary)] shrink-0">{readTime}</span>
+</a>
