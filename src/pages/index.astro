@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import WritingStrip from "../components/ui/WritingStrip.astro";
 ---
 
 <Base title="Franck Rafiou-Doué">
@@ -51,18 +52,7 @@ import Base from "../layouts/Base.astro";
       </a>
     </div>
 
-    <!-- Writing strip -->
-    <div class="flex items-baseline justify-between border-t border-[var(--color-border-tertiary)] pt-5">
-      <div>
-        <span class="font-serif text-[14px] text-[var(--color-text-primary)]">Writing</span>
-        <span class="text-[12px] text-[var(--color-text-secondary)] ml-2">
-          SSRN paper (April 2026) and essays.
-        </span>
-      </div>
-      <a href="/writing" class="text-[13px] text-[var(--color-sage)] hover:text-[var(--color-sage-dark)] transition-colors font-[500]">
-        writing →
-      </a>
-    </div>
+    <WritingStrip description="SSRN paper (April 2026) and essays." />
 
   </div>
 </Base>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  counter?: string;
+}
+const { title, subtitle, counter } = Astro.props;
+---
+
+<div class="mb-10">
+  {counter && (
+    <p class="font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--color-text-secondary)] mb-2">
+      {counter}
+    </p>
+  )}
+  <h1 class="font-serif text-[22px] font-[500] text-[var(--color-text-primary)]">{title}</h1>
+  <div class="h-0.5 w-8 bg-[var(--color-sage)] mt-2"></div>
+  {subtitle && (
+    <p class="text-[14px] text-[var(--color-text-secondary)] leading-relaxed mt-3 max-w-xl">
+      {subtitle}
+    </p>
+  )}
+</div>

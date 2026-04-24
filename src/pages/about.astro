@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/ui/PageHeader.astro";
+import ServiceCard from "../components/ui/ServiceCard.astro";
+import InfoStrip from "../components/ui/InfoStrip.astro";
+import WritingStrip from "../components/ui/WritingStrip.astro";
+
+const services = [
+  {
+    title: "Financial process automation",
+    description:
+      "Close runners, reconciliation helpers, audit evidence prep. The parts of finance ops that used to be re-keying.",
+  },
+  {
+    title: "Predictive analytics & forecasting",
+    description:
+      "Rolling forecasts, cash-flow models, scenario planning with documented assumptions. No hand-waving.",
+  },
+  {
+    title: "Business intelligence & dashboards",
+    description:
+      "Operator cockpits, not investor decks. Revenue, margin, working capital — one screen.",
+  },
+  {
+    title: "Cost optimisation & analysis",
+    description:
+      "Variance analysis that explains what happened and why. Readable by a Head of Finance in three minutes.",
+  },
+];
+
+const infoItems = [
+  { label: "Based in", value: "Lucerne, CH · UTC+1" },
+  { label: "Languages", value: "German · French · English" },
+  { label: "Currently", value: "Controller mandates in Switzerland, applied-AI roles remote." },
+];
+---
+
+<Base title="About" activeNav="about">
+  <div class="mx-auto max-w-3xl px-[var(--spacing-page)] py-12">
+
+    <PageHeader title="About" />
+
+    <!-- Portrait + bio -->
+    <div class="grid gap-6 mb-10" style="grid-template-columns: 128px 1fr;">
+      <!-- Portrait -->
+      <div class="flex-shrink-0">
+        <div
+          class="w-32 h-32 rounded-full bg-[var(--color-bg-tertiary)] border border-[var(--color-border-tertiary)] flex items-center justify-center overflow-hidden"
+          aria-label="Portrait placeholder"
+        >
+          <!-- Replace this div with <Image> once portrait.jpg is provided -->
+          <span class="font-serif text-[22px] text-[var(--color-text-tertiary)] select-none">FR</span>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="flex flex-col justify-center gap-3">
+        <p class="text-[14px] text-[var(--color-text-primary)] leading-relaxed">
+          Financial controller in pharma manufacturing. Building software on the side. Back in Switzerland
+          after a year leading finance elsewhere.
+        </p>
+        <p class="text-[14px] text-[var(--color-text-primary)] leading-relaxed">
+          I split my time between Controller work and a set of tools I build — a self-hosted agent
+          runtime, a subscription-management product, a finance-ops layer for Claude Code. Writing about
+          both.
+        </p>
+      </div>
+    </div>
+
+    <!-- What I work on -->
+    <div class="mb-10">
+      <h2 class="font-serif text-[16px] font-[500] text-[var(--color-text-primary)] mb-1">
+        What I work on
+      </h2>
+      <div class="h-px bg-[var(--color-border-tertiary)] mb-6"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
+        {services.map((s) => <ServiceCard title={s.title} description={s.description} />)}
+      </div>
+    </div>
+
+    <InfoStrip items={infoItems} />
+
+    <div class="mt-10">
+      <WritingStrip description="SSRN paper (April 2026), plus essays on finance and automation." />
+    </div>
+
+  </div>
+</Base>

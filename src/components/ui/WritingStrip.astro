@@ -1,0 +1,19 @@
+---
+interface Props {
+  description: string;
+}
+const { description } = Astro.props;
+---
+
+<div class="flex items-baseline justify-between border-t border-[var(--color-border-tertiary)] pt-5">
+  <div>
+    <span class="font-serif text-[14px] text-[var(--color-text-primary)]">Writing</span>
+    <span class="text-[12px] text-[var(--color-text-secondary)] ml-2">{description}</span>
+  </div>
+  <a
+    href="/writing"
+    class="text-[13px] text-[var(--color-sage)] hover:text-[var(--color-sage-dark)] transition-colors font-[500]"
+  >
+    writing →
+  </a>
+</div>
