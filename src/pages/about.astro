@@ -3,7 +3,6 @@ import Base from "../layouts/Base.astro";
 import PageHeader from "../components/ui/PageHeader.astro";
 import ServiceCard from "../components/ui/ServiceCard.astro";
 import InfoStrip from "../components/ui/InfoStrip.astro";
-import WritingStrip from "../components/ui/WritingStrip.astro";
 
 const services = [
   {
@@ -79,10 +78,6 @@ const infoItems = [
     </div>
 
     <InfoStrip items={infoItems} />
-
-    <div class="mt-10">
-      <WritingStrip description="SSRN paper (April 2026), plus essays on finance and automation." />
-    </div>
 
   </div>
 </Base>
